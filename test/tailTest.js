@@ -1,7 +1,11 @@
-const assertEqual = require('../assertEqual');
+const assert = require('chai').assert;
 const tail = require('../tail');
 
-//Test Case: Check the original array
-const words = ["Yo Yo", "Lighthouse", "Labs"];
-tail(words); // no need to capture the return value since we are not checking it
-assertEqual(words.length, 3); // original array should still have 3 elements!
+describe("#tail", () => {
+  it("should return tail of a new array minus the first element", () => {
+    const words = ["Yo Yo", "Lighthouse", "Labs"];
+    const result = tail(words);
+    assert.strictEqual(result.length, 2);
+  });
+
+});
